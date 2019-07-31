@@ -1,4 +1,5 @@
 const http = require('http');
+const url = require('url');
 
 function handler(req, res){
 const parseUrl = url.parse(req.url, true);
@@ -8,6 +9,6 @@ res.write("Hello, I am a webServer");
 res.end();
 }
 
-const server = http.createServer();
+const server = http.createServer(handler);
 
-server.listen(3200);
+server.listen(3000);
